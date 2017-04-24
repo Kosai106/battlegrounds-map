@@ -11,6 +11,16 @@
 		%title Playerunknown's Battleground Map
 	%body
 		.container
+			.alert.alert-warning.alert-dismissible.fade.show{role: 'alert'}
+				%button{type: 'button', class: 'close', "data-dismiss" => 'alert', "aria-label" => 'Close'}
+					%span{"aria-hidden" => 'true'} &times;
+				%h4.alert-heading Heads up: This is a very early version.
+				%p
+					Currently only potential vehicles spawns are shown.
+					Next I'll start adding in zones in which different tiers of gear is more likely to spawn.
+					As well as that, I'll also finish up the functionality of the UI preferably.
+					%i.float-right Kevin
+
 			.row.text-center.mt-4.mb-3
 				.col-sm-12
 					%h3
@@ -19,8 +29,6 @@
 							An interactive map
 							%i (Early alpha)
 			.row.mb-4.text-center
-				.col-sm-12
-					%p ! Currently only potential vehicles spawns are shown !
 				.col-sm-12.d-flex.justify-content-center
 					%button#reset.btn.btn-outline-primary.mr-3 Reset map
 					%button#hide.btn.btn-outline-primary Hide markers
