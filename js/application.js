@@ -86,7 +86,7 @@ window.onload = function() {
 	var spot;
 	function setMarkers(map) {
 		var image = {
-      url: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+      url: 'img/vehicle-pin.svg',
       // This marker is 20 pixels wide by 32 pixels high.
       size: new google.maps.Size(26, 32),
       // The origin for this image is (0, 0).
@@ -189,7 +189,7 @@ window.onload = function() {
 					 lng: spot[2]
 				 },
 	       map: map,
-				 //icon: image,
+				 icon: image,
 	       title: spot[0],
 				 //label: '' + spot[3],
 	       zIndex: spot[3]
