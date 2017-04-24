@@ -33,9 +33,12 @@
 			.row.mb-4.text-center
 				.col-sm-12.d-flex.justify-content-center
 					%button#reset.btn.btn-outline-primary.mr-3 Reset map
-					%button#hide.btn.btn-outline-primary Hide markers
+					%button#hide.btn.btn-outline-primary{disabled: ''} Hide markers
 			#map-container
-				%input.form-control#location{type: 'text', placeholder: 'Search...'}
+				.input-group
+					%input.form-control#location{placeholder: 'Search...', type: 'text', disabled: ''}
+					%span.input-group-btn
+						%button.btn.btn-secondary{type: 'button', disabled: ''} Go
 				#map
 					%span.loading Loading tiles...
 

@@ -36,11 +36,16 @@
       <div class="row mb-4 text-center">
         <div class="col-sm-12 d-flex justify-content-center">
           <button class="btn btn-outline-primary mr-3" id="reset">Reset map</button>
-          <button class="btn btn-outline-primary" id="hide">Hide markers</button>
+          <button class="btn btn-outline-primary" disabled="" id="hide">Hide markers</button>
         </div>
       </div>
       <div id="map-container">
-        <input class="form-control" id="location" placeholder="Search..." type="text">
+        <div class="input-group">
+          <input class="form-control" disabled="" id="location" placeholder="Search..." type="text">
+          <span class="input-group-btn">
+            <button class="btn btn-secondary" disabled="" type="button">Go</button>
+          </span>
+        </div>
         <div id="map">
           <span class="loading">Loading tiles...</span>
         </div>

@@ -205,10 +205,10 @@ window.onload = function() {
 
 
 	// Development functionality
-	/*
 	var marker = new google.maps.Marker({
 		map: map
 	});
+	/*
 	function mapClick(e) {
 		google.maps.event.addListener(map, 'click', function(e) {
 			marker.setMap(null);
