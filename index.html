@@ -10,53 +10,34 @@
     <title>PlayerUnknown's Battlegrounds &middot; An interactive map</title>
   </head>
   <body>
-    <div class="container">
-      <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <button aria-label="Close" class="close" data-dismiss="alert" type="button">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h4 class="alert-heading">Heads up: This is a very early version.</h4>
-        <p>
-          Currently only potential vehicles spawns are shown.
-          Next I'll start adding in zones in which different tiers of gear is more likely to spawn.
-          As well as that, I'll also finish up the functionality of the UI preferably.
-          <i class="float-right">Kevin</i>
-        </p>
-      </div>
-      <div class="row text-center mt-4 mb-3">
-        <div class="col-sm-12">
-          <h3>
-            PlayerUnknown's Battlegrounds &middot;
-            <small class="muted">
-              An interactive map
-            </small>
-          </h3>
+    <div id="map-container">
+      <div class="container" style="position: absolute; left: 10px; bottom: 10px; z-index: 100;">
+        <img src="img/bp_logo.png" width="200">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <button aria-label="Close" class="close" data-dismiss="alert" type="button">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="alert-heading">Heads up: This is a very early version.</h4>
+          <p>
+            Currently only potential vehicles spawns are shown.
+            Next I'll start adding in zones in which different tiers of gear is more likely to spawn.
+            As well as that, I'll also finish up the functionality of the UI preferably.
+            <a class="float-right" href="http://oesterkilde.dk/">- Kevin &Oslash;sterkilde</a>
+          </p>
         </div>
       </div>
-      <div class="row mb-4 text-center">
-        <div class="col-sm-12 d-flex justify-content-center">
-          <button class="btn btn-outline-primary mr-3" id="reset">Reset map</button>
-          <button class="btn btn-outline-primary" disabled="" id="hide">Hide markers</button>
-        </div>
+      <div class="input-group">
+        <button class="btn btn-primary mr-3" id="reset">Reset map</button>
+        <button class="btn btn-primary" disabled="" id="hide">Hide markers</button>
       </div>
-      <div id="map-container">
-        <div class="input-group">
-          <input class="form-control" disabled="" id="location" placeholder="Search..." type="text">
-          <span class="input-group-btn">
-            <button class="btn btn-secondary" disabled="" type="button">Go</button>
-          </span>
-        </div>
-        <div id="map">
-          <span class="loading">Loading tiles...</span>
-        </div>
+      <div class="input-group">
+        <input class="form-control" disabled="" id="location" placeholder="Search..." type="text">
+        <span class="input-group-btn">
+          <button class="btn btn-secondary" disabled="" type="button">Go</button>
+        </span>
       </div>
-      <div class="row text-center mt-4">
-        <div class="col-sm-12">
-          <small class="muted">
-            Made with <3 by
-            <a href="http://oesterkilde.dk/">Kevin &Oslash;sterkilde</a>
-          </small>
-        </div>
+      <div id="map">
+        <span class="loading">Loading tiles...</span>
       </div>
     </div>
     <script async="" defer="" src="//maps.googleapis.com/maps/api/js?v=3.exp&amp;libraries=geometry,places&amp;key=AIzaSyBnDR4e5_qobPG6Vn_zjhc1vyOIooChZt8" type="text/javascript"></script>

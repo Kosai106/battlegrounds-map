@@ -15,6 +15,10 @@ body {
 		left: 10px;
 		z-index: 100;
 		width: auto;
+		&:nth-child(2) {
+			left: auto;
+			right: 50px;
+		}
 	}
 	#map {
 		position: relative;

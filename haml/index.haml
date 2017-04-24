@@ -13,40 +13,27 @@
 
 		%title PlayerUnknown's Battlegrounds &middot; An interactive map
 	%body
-		.container
-			.alert.alert-warning.alert-dismissible.fade.show{role: 'alert'}
-				%button{type: 'button', class: 'close', "data-dismiss" => 'alert', "aria-label" => 'Close'}
-					%span{"aria-hidden" => 'true'} &times;
-				%h4.alert-heading Heads up: This is a very early version.
-				%p
-					Currently only potential vehicles spawns are shown.
-					Next I'll start adding in zones in which different tiers of gear is more likely to spawn.
-					As well as that, I'll also finish up the functionality of the UI preferably.
-					%i.float-right Kevin
-
-			.row.text-center.mt-4.mb-3
-				.col-sm-12
-					%h3
-						PlayerUnknown's Battlegrounds &middot;
-						%small.muted
-							An interactive map
-			.row.mb-4.text-center
-				.col-sm-12.d-flex.justify-content-center
-					%button#reset.btn.btn-outline-primary.mr-3 Reset map
-					%button#hide.btn.btn-outline-primary{disabled: ''} Hide markers
-			#map-container
-				.input-group
-					%input.form-control#location{placeholder: 'Search...', type: 'text', disabled: ''}
-					%span.input-group-btn
-						%button.btn.btn-secondary{type: 'button', disabled: ''} Go
-				#map
-					%span.loading Loading tiles...
-
-			.row.text-center.mt-4
-				.col-sm-12
-					%small.muted
-						Made with <3 by
-						%a{href: 'http://oesterkilde.dk/'} Kevin &Oslash;sterkilde
+		#map-container
+			.container{style: 'position: absolute; left: 10px; bottom: 10px; z-index: 100;'}
+				%img{src: 'img/bp_logo.png', width: 200}
+				.alert.alert-warning.alert-dismissible.fade.show{role: 'alert'}
+					%button{type: 'button', class: 'close', "data-dismiss" => 'alert', "aria-label" => 'Close'}
+						%span{"aria-hidden" => 'true'} &times;
+					%h4.alert-heading Heads up: This is a very early version.
+					%p
+						Currently only potential vehicles spawns are shown.
+						Next I'll start adding in zones in which different tiers of gear is more likely to spawn.
+						As well as that, I'll also finish up the functionality of the UI preferably.
+						%a.float-right{href: 'http://oesterkilde.dk/'} - Kevin &Oslash;sterkilde
+			.input-group
+				%button#reset.btn.btn-primary.mr-3 Reset map
+				%button#hide.btn.btn-primary{disabled: ''} Hide markers
+			.input-group
+				%input.form-control#location{placeholder: 'Search...', type: 'text', disabled: ''}
+				%span.input-group-btn
+					%button.btn.btn-secondary{type: 'button', disabled: ''} Go
+			#map
+				%span.loading Loading tiles...
 
 		-# Javascript
 			-# Vendor

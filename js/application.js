@@ -235,3 +235,18 @@ window.onload = function() {
 	});
 
 }
+
+
+$(document).ready(function() {
+	var viewportHeight = $(document).height();
+	var viewportWidth = $(document).width();
+	function mapHeightDevice() {
+		$('#map-container')
+			.css('height', viewportHeight)
+			.css('width', viewportWidth);
+	}
+	$(window).resize(function() {
+		mapHeightDevice();
+	});
+	$(window).trigger('resize');
+})
