@@ -12,20 +12,23 @@
     <div class="container">
       <div class="row text-center mt-4 mb-3">
         <div class="col-sm-12">
-          <h1>
+          <h3>
             PlayerUnknown's Battlegrounds &middot;
-            <small class="muted">An interactive map</small>
-          </h1>
+            <small class="muted">
+              An interactive map
+              <i>(Early alpha)</i>
+            </small>
+          </h3>
         </div>
       </div>
       <div class="row mb-4">
         <div class="col-sm-12 d-flex justify-content-center">
-          <button class="btn btn-lg btn-outline-primary mr-3" id="reset">Reset map</button>
-          <button class="btn btn-lg btn-outline-primary" id="hide">Hide markers</button>
+          <button class="btn btn-outline-primary mr-3" id="reset">Reset map</button>
+          <button class="btn btn-outline-primary" id="hide">Hide markers</button>
         </div>
       </div>
       <div id="map-container">
-        <input id="location" placeholder="Search..." type="text">
+        <input class="form-control" id="location" placeholder="Search..." type="text">
         <div id="map">
           <span class="loading">Loading tiles...</span>
         </div>

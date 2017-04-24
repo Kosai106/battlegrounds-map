@@ -13,15 +13,17 @@
 		.container
 			.row.text-center.mt-4.mb-3
 				.col-sm-12
-					%h1
+					%h3
 						PlayerUnknown's Battlegrounds &middot;
-						%small.muted An interactive map
+						%small.muted
+							An interactive map
+							%i (Early alpha)
 			.row.mb-4
 				.col-sm-12.d-flex.justify-content-center
-					%button#reset.btn.btn-lg.btn-outline-primary.mr-3 Reset map
-					%button#hide.btn.btn-lg.btn-outline-primary Hide markers
+					%button#reset.btn.btn-outline-primary.mr-3 Reset map
+					%button#hide.btn.btn-outline-primary Hide markers
 			#map-container
-				%input#location{type: 'text', placeholder: 'Search...'}
+				%input.form-control#location{type: 'text', placeholder: 'Search...'}
 				#map
 					%span.loading Loading tiles...
 
