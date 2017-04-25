@@ -45,18 +45,10 @@ body {
 			margin-right: 6px;
 		}
 		span.b {
-			@include colourBox($global-blue);
-			margin-right: 6px;
-		}
-		span.c {
-			@include colourBox($global-red);
-			margin-right: 6px;
-		}
-		span.d {
 			@include colourBox($global-yellow);
 			margin-right: 6px;
 		}
-		span.e {
+		span.c {
 			@include colourBox($global-blue);
 			margin-right: 6px;
 		}

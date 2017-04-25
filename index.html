@@ -1,81 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
   <head>
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-    <meta content="width=device-width, initial-scale=1.0" name:="">
-    <meta charset="utf-8">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+    <meta content='width=device-width, initial-scale=1.0' name:=''>
+    <meta charset='utf-8'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css' rel='stylesheet'>
     </link>
-    <link href="css/application.css" rel="stylesheet">
+    <link href='./css/application.min.css' rel='stylesheet'>
     <title>PlayerUnknown's Battlegrounds &middot; An interactive map</title>
   </head>
   <body>
-    <div id="map-container">
-      <div class="container">
-        <img src="img/bp_logo.png" width="200">
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-          <button aria-label="Close" class="close" data-dismiss="alert" type="button">
-            <span aria-hidden="true">&times;</span>
+    <div id='map-container'>
+      <div class='container'>
+        <img src='img/bp_logo.png' width='200'>
+        <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+          <button aria-label='Close' class='close' data-dismiss='alert' type='button'>
+            <span aria-hidden='true'>&times;</span>
           </button>
-          <h4 class="alert-heading">Heads up: This is a very early version.</h4>
+          <h4 class='alert-heading'>Heads up: This is a very early version.</h4>
           <p>
             Currently potential and guaranteed vehicle spawns + possible boat spawns are shown.
             Next I'll start adding in zones in which different tiers of gear is more likely to spawn.
             As well as that, I'll also finish up the functionality of the UI preferably.
-            <a class="float-right" href="http://oesterkilde.dk/">- Kevin &Oslash;sterkilde</a>
+            <a class='float-right' href='http://oesterkilde.dk/'>- Kevin &Oslash;sterkilde</a>
           </p>
         </div>
       </div>
-      <div class="legend">
-        <div class="legend--item">
+      <div class='legend'>
+        <div class='legend--item'>
           <h4>Markers:</h4>
-          <div class="item">
-            <span class="a"></span>
+          <div class='item'>
+            <span class='a'></span>
             Guaranteed spawn
           </div>
-          <div class="item">
-            <span class="b"></span>
+          <div class='item'>
+            <span class='c'></span>
             Potential spawn
           </div>
         </div>
-        <div class="legend--item">
+        <div class='legend--item'>
           <h4>
             Zones:
-            <small class="muted">(To-do!)</small>
+            <small class='muted'>(To-do!)</small>
           </h4>
-          <div class="item">
-            <span class="c"></span>
+          <div class='item'>
+            <span class='a'></span>
             High spawn chance
           </div>
-          <div class="item">
-            <span class="d"></span>
+          <div class='item'>
+            <span class='b'></span>
             Medium spawn chance
           </div>
-          <div class="item">
-            <span class="e"></span>
+          <div class='item'>
+            <span class='c'></span>
             Low spawn chance
           </div>
         </div>
       </div>
-      <div class="input-group">
-        <button class="btn btn-primary mr-3" id="reset">Reset map</button>
-        <button class="btn btn-primary" disabled="" id="hide">Hide all markers</button>
+      <div class='input-group'>
+        <button class='btn btn-primary mr-3' id='reset'>Reset map</button>
+        <button class='btn btn-primary' disabled='' id='hide'>Hide all markers</button>
       </div>
-      <div class="input-group">
-        <input class="form-control" disabled="" id="location" placeholder="Search..." type="text">
-        <span class="input-group-btn">
-          <button class="btn btn-secondary" disabled="" type="button">Go</button>
+      <div class='input-group'>
+        <input class='form-control' disabled='' id='location' placeholder='Search...' type='text'>
+        <span class='input-group-btn'>
+          <button class='btn btn-secondary' disabled='' type='button'>Go</button>
         </span>
       </div>
-      <div id="map">
-        <span class="loading">Loading tiles...</span>
+      <div id='map'>
+        <span class='loading'>Loading tiles...</span>
       </div>
     </div>
-    <script async="" defer="" src="//maps.googleapis.com/maps/api/js?v=3.exp&amp;libraries=geometry,places&amp;key=AIzaSyBnDR4e5_qobPG6Vn_zjhc1vyOIooChZt8" type="text/javascript"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" type="text/javascript"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" type="text/javascript">
+    <script async='' defer='' src='https://maps.googleapis.com/maps/api/js?v=3.exp&amp;libraries=geometry,places&amp;key=AIzaSyBnDR4e5_qobPG6Vn_zjhc1vyOIooChZt8' type='text/javascript'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' type='text/javascript'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js' type='text/javascript'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js' type='text/javascript'>
     </script>
-    <script src="js/application-dist.js" type="text/javascript"></script>
+    <script src='./js/application.min.js' type='text/javascript'></script>
   </body>
 </html>
