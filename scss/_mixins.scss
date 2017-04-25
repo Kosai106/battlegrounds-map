@@ -1,0 +1,7 @@
+@mixin colourBox($color) {
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+	border-radius: 24px;
+	background-color: $color;
+}

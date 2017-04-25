@@ -14,24 +14,50 @@
 		%title PlayerUnknown's Battlegrounds &middot; An interactive map
 	%body
 		#map-container
-			.container{style: 'position: absolute; left: 10px; bottom: 10px; z-index: 100;'}
+			.container
 				%img{src: 'img/bp_logo.png', width: 200}
 				.alert.alert-warning.alert-dismissible.fade.show{role: 'alert'}
 					%button{type: 'button', class: 'close', "data-dismiss" => 'alert', "aria-label" => 'Close'}
 						%span{"aria-hidden" => 'true'} &times;
 					%h4.alert-heading Heads up: This is a very early version.
 					%p
-						Currently only potential vehicles spawns are shown.
+						Currently potential and guaranteed vehicle spawns + possible boat spawns are shown.
 						Next I'll start adding in zones in which different tiers of gear is more likely to spawn.
 						As well as that, I'll also finish up the functionality of the UI preferably.
 						%a.float-right{href: 'http://oesterkilde.dk/'} - Kevin &Oslash;sterkilde
+
+			.legend
+				.legend--item
+					%h4 Markers:
+					%div.item
+						%span.a
+						Guaranteed spawn
+					%div.item
+						%span.b
+						Potential spawn
+				.legend--item
+					%h4
+						Zones:
+						%small.muted (To-do!)
+					%div.item
+						%span.c
+						High spawn chance
+					%div.item
+						%span.d
+						Medium spawn chance
+					%div.item
+						%span.e
+						Low spawn chance
+
 			.input-group
 				%button#reset.btn.btn-primary.mr-3 Reset map
-				%button#hide.btn.btn-primary{disabled: ''} Hide markers
+				%button#hide.btn.btn-primary{disabled: ''} Hide all markers
+
 			.input-group
 				%input.form-control#location{placeholder: 'Search...', type: 'text', disabled: ''}
 				%span.input-group-btn
 					%button.btn.btn-secondary{type: 'button', disabled: ''} Go
+
 			#map
 				%span.loading Loading tiles...
 

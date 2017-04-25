@@ -11,7 +11,7 @@
   </head>
   <body>
     <div id="map-container">
-      <div class="container" style="position: absolute; left: 10px; bottom: 10px; z-index: 100;">
+      <div class="container">
         <img src="img/bp_logo.png" width="200">
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
           <button aria-label="Close" class="close" data-dismiss="alert" type="button">
@@ -19,16 +19,47 @@
           </button>
           <h4 class="alert-heading">Heads up: This is a very early version.</h4>
           <p>
-            Currently only potential vehicles spawns are shown.
+            Currently potential and guaranteed vehicle spawns + possible boat spawns are shown.
             Next I'll start adding in zones in which different tiers of gear is more likely to spawn.
             As well as that, I'll also finish up the functionality of the UI preferably.
             <a class="float-right" href="http://oesterkilde.dk/">- Kevin &Oslash;sterkilde</a>
           </p>
         </div>
       </div>
+      <div class="legend">
+        <div class="legend--item">
+          <h4>Markers:</h4>
+          <div class="item">
+            <span class="a"></span>
+            Guaranteed spawn
+          </div>
+          <div class="item">
+            <span class="b"></span>
+            Potential spawn
+          </div>
+        </div>
+        <div class="legend--item">
+          <h4>
+            Zones:
+            <small class="muted">(To-do!)</small>
+          </h4>
+          <div class="item">
+            <span class="c"></span>
+            High spawn chance
+          </div>
+          <div class="item">
+            <span class="d"></span>
+            Medium spawn chance
+          </div>
+          <div class="item">
+            <span class="e"></span>
+            Low spawn chance
+          </div>
+        </div>
+      </div>
       <div class="input-group">
         <button class="btn btn-primary mr-3" id="reset">Reset map</button>
-        <button class="btn btn-primary" disabled="" id="hide">Hide markers</button>
+        <button class="btn btn-primary" disabled="" id="hide">Hide all markers</button>
       </div>
       <div class="input-group">
         <input class="form-control" disabled="" id="location" placeholder="Search..." type="text">
