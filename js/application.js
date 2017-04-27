@@ -1,54 +1,33 @@
 /* global google */
 
-/*
- * = PS_Bramus.GoogleMapsTileCutter Config
- * ----------------
- */
-
+/* PS_Bramus.GoogleMapsTileCutter Config */
 var repeatOnXAxis = true; // Do we need to repeat the image on the X-axis? Most likely you'll want to set this to false
 
-
-
-/*
- * Helper function which normalizes the coords so that tiles can repeat across the X-axis (horizontally) like the standard Google map tiles.
- * ----------------
- */
-
+/* Helper function which normalizes the coords so that tiles can repeat across the X-axis (horizontally) like the standard Google map tiles. */
 function getNormalizedCoord(coord, zoom) {
 	if (!repeatOnXAxis) return coord;
-
 	var y = coord.y;
 	var x = coord.x;
-
 	// tile range in one direction range is dependent on zoom level
 	// 0 = 1 tile, 1 = 2 tiles, 2 = 4 tiles, 3 = 8 tiles, etc
 	var tileRange = 1 << zoom;
-
 	// don't repeat across Y-axis (vertically)
 	if (y < 0 || y >= tileRange) {
 		return null;
 	}
-
 	// repeat across X-axis
 	if (x < 0 || x >= tileRange) {
 		x = (x % tileRange + tileRange) % tileRange;
 	}
-
 	return {
 		x: x,
 		y: y
 	};
-
 }
 
 
-/*
- * Main Core
- * ----------------
- */
-
+/* Main Core */
 window.onload = function() {
-
 	// Define our custom map type
 	var customMapType = new google.maps.ImageMapType({
 		getTileUrl: function(coord, zoom) {
@@ -68,7 +47,8 @@ window.onload = function() {
 	var myOptions = {
 		center: new google.maps.LatLng(0, 0),
 		zoom: 2,
-		minZoom: 0,
+		minZoom: 2,
+		maxZoom: 5,
 		fullscreenControl: true,
 		streetViewControl: false,
 		mapTypeControl: false,
@@ -240,11 +220,93 @@ window.onload = function() {
 	 			map.setZoom(6);
 	 		});
 	   }
- 	}
+ 	};
+
+	function createZone(shape, colour, radius, lat, lng) {
+		if (shape === 'circle') {
+			var circle = new google.maps.Circle({
+				map: map,
+				center: new google.maps.LatLng(lat, lng),
+				radius: radius,
+				fillColor: colour,
+				strokeColor: colour,
+				fillOpacity: 0.35,
+				strokeOpacity: 1,
+				strokeWeight: 2,
+				draggable: true,
+				editable: false,
+				geodesic: true
+			});
+		}
+		if (shape === 'polygon') {
+			var polygon = new google.maps.Polygon({
+				map: map,
+				fillColor: colour,
+				strokeColor: colour,
+				fillOpacity: 0.35,
+				strokeOpacity: 1,
+				strokeWeight: 2,
+				draggable: false,
+				editable: false,
+				paths: [
+					{lat: -31.20340495091738, lng: 8.61328125},
+					{lat: -33.578014746143985, lng: 30.9375},
+					{lat: -37.996162679728116, lng: 45.87890625},
+					{lat: -41.44272637767212, lng: 58.974609375},
+					{lat: -48.69096039092549, lng: 68.02734375},
+					{lat: -55.727110085045986, lng: 68.02734375},
+					{lat: -61.77312286453145, lng: 63.544921875},
+					{lat: -67.57571741708055, lng: 54.052734375},
+					{lat: -68.46379955520322, lng: 36.298828125},
+					{lat: -69.8396219406746, lng: 19.248046875},
+					{lat: -70.05059634999756, lng: -1.23046875},
+					{lat: -67.84241647327927, lng: -16.962890625},
+					{lat: -63.97596090918336, lng: -28.125},
+					{lat: -57.51582286553883, lng: -38.14453125},
+					{lat: -50.95842672335992, lng: -35.595703125},
+					{lat: -44.777935896316215, lng: -21.533203125},
+					{lat: -36.3151251474805, lng: -10.01953125},
+					{lat: -31.877557643340015, lng: 1.494140625}
+				]
+			});
+		}
+	}
+
+	function setZones(x, shape, lat, lng) {
+		switch(x) {
+			case 'a':
+				return createZone(shape, '#00BFFF', 500000, lat, lng);
+				break;
+			case 'b':
+				return createZone(shape, '#FED112', 750000, lat, lng);
+				break;
+			case 'c':
+				return createZone(shape, '#FF4747', 1500000, lat, lng);
+				break;
+		};
+	};
+
+	/*setZones('a', 'circle', 73.02259157147301, 106.875);
+	setZones('b', 'circle', 61.037012232401864, 45.791015625);
+	setZones('c', 'circle', 1.7575368113083254, -42.5390625);
+	setZones('c', 'polygon', 1.7575368113083254, -42.5390625);*/
+
+	function circlePath(circleObj) {
+		var numPts = 32;
+		var path = [];
+		for (var i = 0; i < numPts; i++) {
+			path.push(google.maps.geometry.spherical.computeOffset(
+				circleObj.getCenter(),
+				circleObj.getRadius(),
+				i * 360 / numPts
+			));
+		}
+		return path;
+	}
+
+
 
 	setMarkers(map);
-
-
 	// Development functionality
 	var marker = new google.maps.Marker({
 		map: map
